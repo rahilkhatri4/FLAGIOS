@@ -40,7 +40,7 @@ class LoginpageController: UIViewController {
             }
     
     func makeLoginRequest(email: String, password: String) {
-        guard let url = URL(string: "http://localhost/flag/login.php") else {
+        guard let url = URL(string: "https://chipcrop.xyz/login.php") else {
             print("Invalid URL")
             return
         }

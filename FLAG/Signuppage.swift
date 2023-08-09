@@ -61,7 +61,7 @@ class SignuppageController: UIViewController {
     func makeSignupRequest(firstName: String, lastName: String, email: String, password: String, confirmPassword: String) {
         
         let name = firstName + " " + lastName;
-            guard let url = URL(string: "http://localhost/flag/registerUser.php") else {
+            guard let url = URL(string: "https://chipcrop.xyz/registerUser.php") else {
                 print("Invalid URL")
                 return
             }

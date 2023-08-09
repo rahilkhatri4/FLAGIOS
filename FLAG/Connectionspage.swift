@@ -31,7 +31,7 @@ class ConnectionspageController: UIViewController {
     }
     
     func fetchUsers() {
-        guard let url = URL(string: "http://localhost/flag/getUsers.php") else {
+        guard let url = URL(string: "https://chipcrop.xyz/getUsers.php") else {
             print("Invalid URL")
             return
         }
