@@ -57,4 +57,65 @@ class SignuppageController: UIViewController {
                     textField.leftViewMode = .always
                 }
             }
+    
+    func makeSignupRequest(firstName: String, lastName: String, email: String, password: String, confirmPassword: String) {
+        
+        let name = firstName + " " + lastName;
+            guard let url = URL(string: "http://localhost/flag/registerUser.php") else {
+                print("Invalid URL")
+                return
+            }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            
+            // Set the content type header for form data
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            
+            let postString = "register=register&name=\(name)&email=\(email)&password=\(password)&confirmpassword=\(confirmPassword)"
+            request.httpBody = postString.data(using: .utf8)
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let data = data {
+                    do {
+                        if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            // Process and print the JSON response
+                            print("JSON Response: \(jsonResponse)")
+                            
+                            // Check if 'success' key exists in the response
+                            if let success = jsonResponse["success"] as? Bool {
+                                if success {
+                                    print("Signup Successful")
+                                    // Perform actions for successful signup
+                                } else {
+                                    if let error = jsonResponse["error"] as? String {
+                                        print("Signup Failed: \(error)")
+                                        // Handle signup failure, show error message to user
+                                    }
+                                }
+                            }
+                        }
+                    } catch let error {
+                        print("Error decoding response: \(error.localizedDescription)")
+                    }
+                }
+            }
+            
+            task.resume()
         }
+    
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
+            if let firstName = firstnameTextField.text,
+               let lastName = lastnameTextField.text,
+               let email = emailidTextField.text,
+               let confirmPassword = confirmpasswordTextField.text,
+               let password = passwordTextField.text {
+                makeSignupRequest(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
+            }
+        }
+    }

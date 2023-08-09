@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nvc-eX-4i0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ksK-j3-WaW">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -168,6 +168,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign up"/>
+                                <connections>
+                                    <action selector="signupButtonTapped:" destination="ksK-j3-WaW" eventType="touchUpInside" id="Sl0-fG-dRQ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag-icon" translatesAutoresizingMaskIntoConstraints="NO" id="kfI-MC-1KX">
                                 <rect key="frame" x="140" y="211" width="150" height="90"/>
@@ -180,8 +183,8 @@
                     <connections>
                         <outlet property="confirmpasswordTextField" destination="hoe-FA-oZB" id="CV8-A2-92R"/>
                         <outlet property="emailidTextField" destination="kzm-g6-wp5" id="Y57-wR-75V"/>
-                        <outlet property="firstnameTextField" destination="0lG-9o-W84" id="7VF-LN-8kh"/>
-                        <outlet property="lastnameTextField" destination="ik2-bA-K5A" id="KcU-2t-Rg7"/>
+                        <outlet property="firstnameTextField" destination="ik2-bA-K5A" id="yAx-fA-lJP"/>
+                        <outlet property="lastnameTextField" destination="0lG-9o-W84" id="tOB-bO-Lfi"/>
                         <outlet property="passwordTextField" destination="kHy-cM-qgk" id="icE-q9-jV4"/>
                         <outlet property="signupButton" destination="9CB-bv-ALT" id="2TF-O1-o6O"/>
                     </connections>
