@@ -17,6 +17,10 @@ class LoginpageController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var createaccountLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,10 +41,13 @@ class LoginpageController: UIViewController {
         
         
                 loginButton.applyGradient()
+        
+                // Apply gradient text color to label
+                createaccountLabel.applyGradientTextColor(gradientObject: gradientObject)
             }
     
     func makeLoginRequest(email: String, password: String) {
-        guard let url = URL(string: "https://chipcrop.xyz/login.php") else {
+        guard let url = URL(string: "https://e-invite.site/login.php") else {
             print("Invalid URL")
             return
         }
@@ -70,7 +77,7 @@ class LoginpageController: UIViewController {
                         if let success = jsonResponse["success"] as? Bool {
                             if success {
                                 print("Login Successful")
-                                // Perform actions for successful login
+                                self.navigateToHomepage()
                             } else {
                                 if let error = jsonResponse["error"] as? String {
                                     print("Login Failed: \(error)")
@@ -97,5 +104,20 @@ class LoginpageController: UIViewController {
         }
     
     }
-
+    
+    func navigateToHomepage() {
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: "MaintabViewController") as! UITabBarController
+            UIApplication.shared.windows.first?.rootViewController = tabBarController
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
+    }
+    
+       
+    @IBAction func createAccountLabelTapped(_ sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           let signupVC = storyboard.instantiateViewController(withIdentifier: "SignuppageController") as! SignuppageController
+           present(signupVC, animated: true, completion: nil)
+    }
         }

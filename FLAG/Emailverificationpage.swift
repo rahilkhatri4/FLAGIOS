@@ -34,6 +34,18 @@ class Emailverificationpage: UIViewController {
         let emailidPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: leftPadding, height: 1))
         emailidTextField.leftView = emailidPaddingView
         emailidTextField.leftViewMode = .always
+        
+        // Attach the action to the verifyButton
+                verifyButton.addTarget(self, action: #selector(verifyButtonTapped), for: .touchUpInside)
 
     }
+    
+    @objc func verifyButtonTapped() {
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let emailVerificationPage = storyboard.instantiateViewController(withIdentifier: "OTPverificationpage") as! OTPverificationpage
+                self.present(emailVerificationPage, animated: true, completion: nil)
+            }
+        }
+    
 }

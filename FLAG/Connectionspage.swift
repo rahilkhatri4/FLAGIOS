@@ -1,6 +1,7 @@
 import UIKit
 
 class ConnectionspageController: UIViewController {
+    
     @IBOutlet weak var profilePicture: UIImageView!
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -9,8 +10,16 @@ class ConnectionspageController: UIViewController {
     
     @IBOutlet weak var gradientView: UIView!
     
+//    @IBAction func didTapButton(){
+//        if let homepageViewController = UIStoryboard(name: "Main", bundle: nil)
+//               .instantiateViewController(withIdentifier: "HomepageController") as? HomepageController {
+//               navigationController?.pushViewController(homepageViewController, animated: true)
+//           }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Set the content mode to aspect fit (or any other mode you prefer)
         profilePicture.contentMode = .scaleToFill
@@ -31,7 +40,7 @@ class ConnectionspageController: UIViewController {
     }
     
     func fetchUsers() {
-        guard let url = URL(string: "https://chipcrop.xyz/getUsers.php") else {
+        guard let url = URL(string: "https://e-invite.site/getUsers.php") else {
             print("Invalid URL")
             return
         }
@@ -79,7 +88,10 @@ class ConnectionspageController: UIViewController {
 //            userLabel.text = "Name: \(name), Birthdate: \(birthdate)"
 //            userLabel.frame = CGRect(x: 20, y: yOffset, width: 300, height: 30)
 //            gradientView.addSubview(userLabel)
-            yOffset += 40.0 // Adjust the vertical spacing
+//            yOffset += 40.0 // Adjust the vertical spacing
         }
     }
+   
 }
+
+

@@ -32,6 +32,10 @@ class OTPverificationpage: UIViewController {
         super.viewDidLoad()
                 setupLabels()
                 verifyButton.applyGradient()
+        
+        // Attach the action to the verifyButton
+                verifyButton.addTarget(self, action: #selector(verifyButtonTapped), for: .touchUpInside)
+        
             }
 
             func setupLabels() {
@@ -55,4 +59,12 @@ class OTPverificationpage: UIViewController {
                     label.layer.masksToBounds = true
                 }
             }
+    
+    @objc func verifyButtonTapped() {
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let otpVerificationPage = storyboard.instantiateViewController(withIdentifier: "LoginpageController") as! LoginpageController
+                self.present(otpVerificationPage, animated: true, completion: nil)
+            }
+        }
         }

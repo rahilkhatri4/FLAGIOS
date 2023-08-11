@@ -57,11 +57,13 @@ class SignuppageController: UIViewController {
                     textField.leftViewMode = .always
                 }
             }
+
     
     func makeSignupRequest(firstName: String, lastName: String, email: String, password: String, confirmPassword: String) {
         
+        
         let name = firstName + " " + lastName;
-            guard let url = URL(string: "https://chipcrop.xyz/registerUser.php") else {
+            guard let url = URL(string: "https://e-invite.site/registerUser.php") else {
                 print("Invalid URL")
                 return
             }
@@ -92,6 +94,8 @@ class SignuppageController: UIViewController {
                                 if success {
                                     print("Signup Successful")
                                     // Perform actions for successful signup
+                                    self.navigateToEmailVerificationPage()
+                                   
                                 } else {
                                     if let error = jsonResponse["error"] as? String {
                                         print("Signup Failed: \(error)")
@@ -118,4 +122,16 @@ class SignuppageController: UIViewController {
                 makeSignupRequest(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
             }
         }
+    
+    func navigateToEmailVerificationPage() {
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let emailVerificationPage = storyboard.instantiateViewController(withIdentifier: "Emailverificationpage") as! Emailverificationpage
+            self.present(emailVerificationPage, animated: true, completion: nil)
+        }
     }
+    
+}
+
+
+

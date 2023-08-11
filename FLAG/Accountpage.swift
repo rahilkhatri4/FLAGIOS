@@ -24,10 +24,31 @@ class AccountpageController: UIViewController {
     
     @IBOutlet weak var addintresetButton: UIButton!
     
+    @IBOutlet weak var FromAge: UITextField!
+    
+    @IBOutlet weak var ToAge: UITextField!
+    
+    @IBOutlet weak var birthdayTextField: UITextField!
+    
+    @IBOutlet weak var CampusTextField: UITextField!
+    
+    @IBOutlet weak var updateButton: UIButton!
+    
+    @IBOutlet weak var SelectGender: UITextField!
+    
+    
+    
+//    @IBAction func previousButtonTapped(_ sender: UIButton) {
+//           // Navigate to the "Homepage" view controller
+//           if let ConnectionspageViewController = UIStoryboard(name: "Main", bundle: nil)
+//               .instantiateViewController(withIdentifier: "ConnectionspageController") as? ConnectionspageController {
+//               navigationController?.pushViewController(ConnectionspageViewController, animated: true)
+//           }
+//       }
     
     override func viewDidLoad() {
             super.viewDidLoad()
-            
+            updateButton.applyGradient()
         // Set the content mode to aspect fit (or any other mode you prefer)
                profilePicture.contentMode = .scaleToFill
                
@@ -44,11 +65,19 @@ class AccountpageController: UIViewController {
         userTextField.applyGradientTextColor(gradientObject: gradientObject)
         mobileTextField.applyGradientTextColor(gradientObject: gradientObject)
         intrestTextField.applyGradientTextColor(gradientObject: gradientObject)
+        birthdayTextField.applyGradientTextColor(gradientObject: gradientObject)
+        CampusTextField.applyGradientTextColor(gradientObject: gradientObject)
+        SelectGender.applyGradientTextColor(gradientObject: gradientObject)
+        FromAge.applyGradientTextColor(gradientObject: gradientObject)
+        ToAge.applyGradientTextColor(gradientObject: gradientObject)
         
         // Apply gradient border color to text fields
         userTextField.applyGradientBorderColor(gradientObject: gradientObject, cornerRadius: 10, padding: UIEdgeInsets())
         mobileTextField.applyGradientBorderColor(gradientObject: gradientObject, cornerRadius: 10, padding: UIEdgeInsets())
         intrestTextField.applyGradientBorderColor(gradientObject: gradientObject, cornerRadius: 10, padding: UIEdgeInsets())
+        birthdayTextField.applyGradientBorderColor(gradientObject: gradientObject, cornerRadius: 10, padding: UIEdgeInsets())
+        CampusTextField.applyGradientBorderColor(gradientObject: gradientObject, cornerRadius: 10, padding: UIEdgeInsets())
+        SelectGender.applyGradientBorderColor(gradientObject: gradientObject, cornerRadius: 10, padding: UIEdgeInsets())
 
         // Apply gradient text color to label
         TitleLabel.applyGradientTextColor(gradientObject: gradientObject)

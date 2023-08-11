@@ -19,10 +19,16 @@ class HomepageController: UIViewController {
     
     @IBOutlet weak var interestTextField: UITextField!
     
-    @IBOutlet weak var customSearchBar: UISearchBar!
+    @IBOutlet weak var aboutTextView: UITextView!
+    
+    @IBOutlet weak var SendInterest: UIButton!
+    
+    @IBOutlet weak var NextProfile: UIButton!
+    
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        
         
             // Set the corner radius for basicView and interestView
             Customstyles.applyDefaultStyle(to: basicView)
@@ -31,7 +37,14 @@ class HomepageController: UIViewController {
             // Apply custom styles to text fields
             Customstyles.applyDefaultTextFieldStyle(to: basicTextField)
             Customstyles.applyDefaultTextFieldStyle(to: interestTextField)
+        
+            // Apply gradient text color to text view
+            aboutTextView.applyGradientTextColor(gradientObject: gradientObject)
 
+        // Apply gradient border to text view
+//            let padding = UIEdgeInsets(top: 10, left: 10,bottom: 10, right: 10)
+//            aboutTextView.applyGradientBorderColor(gradientObject: gradientObject, cornerRadius: 10, padding: padding)
+        
             // Example: Apply the same style to a futureView
             let futureView = UIView()
             Customstyles.applyDefaultStyle(to: futureView)
@@ -43,11 +56,13 @@ class HomepageController: UIViewController {
         interestView.layer.masksToBounds = true;
         
         fetchUsers()
+    
         
         }
     
+    
     func fetchUsers() {
-            guard let url = URL(string: "https://chipcrop.xyz/getUsers.php") else {
+            guard let url = URL(string: "https://e-invite.site/getUsers.php") else {
                 print("Invalid URL")
                 return
             }
@@ -76,6 +91,14 @@ class HomepageController: UIViewController {
                         }
                     }
                 }
+                
             }.resume()
+        
+        
         }
+    
+    
+    
+    
     }
+
