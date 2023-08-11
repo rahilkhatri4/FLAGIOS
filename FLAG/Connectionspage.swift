@@ -79,7 +79,7 @@ class ConnectionspageController: UIViewController {
 //            userLabel.text = "Name: \(name), Birthdate: \(birthdate)"
 //            userLabel.frame = CGRect(x: 20, y: yOffset, width: 300, height: 30)
 //            gradientView.addSubview(userLabel)
-//            yOffset += 40.0 // Adjust the vertical spacing
+            yOffset += 40.0 // Adjust the vertical spacing
         }
     }
 }
