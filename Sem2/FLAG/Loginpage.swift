@@ -11,7 +11,7 @@ import UIKit
 class LoginpageController: UIViewController {
 
     
-    @IBOutlet weak var usernameTextField: GradientTextField!
+    @IBOutlet weak var idTextField: GradientTextField!
     
     @IBOutlet weak var passwordTextField: GradientTextField!
     
@@ -31,12 +31,12 @@ class LoginpageController: UIViewController {
                 ], startPoint: CGPoint(x: 0, y: 0.5), endPoint: CGPoint(x: 1, y: 0.5))
 
                 // Apply gradient style to text fields
-        Customstyles.applyGradientStyle(to: usernameTextField, gradientObject: gradientObject)
+        Customstyles.applyGradientStyle(to: idTextField, gradientObject: gradientObject)
         Customstyles.applyGradientStyle(to: passwordTextField, gradientObject: gradientObject)
 
                 // Add left padding to text fields
                 let leftPadding: CGFloat = 35.0
-        Customstyles.applyLeftPadding(to: usernameTextField, padding: leftPadding)
+        Customstyles.applyLeftPadding(to: idTextField, padding: leftPadding)
         Customstyles.applyLeftPadding(to: passwordTextField, padding: leftPadding)
         
         
@@ -44,7 +44,7 @@ class LoginpageController: UIViewController {
 
             }
     
-    func makeLoginRequest(email: String, password: String) {
+    func makeLoginRequest(id: String, password: String) {
         guard let url = URL(string: "https://e-invite.site/login.php") else {
             print("Invalid URL")
             return
@@ -56,7 +56,7 @@ class LoginpageController: UIViewController {
         // Set the content type header for form data
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
-        let postString = "email=\(email)&password=\(password)"
+        let postString = "id=\(id)&password=\(password)"
         request.httpBody = postString.data(using: .utf8)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -97,8 +97,8 @@ class LoginpageController: UIViewController {
 
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        if let email = usernameTextField.text, let password = passwordTextField.text {
-            makeLoginRequest(email: email, password: password)
+        if let id = idTextField.text, let password = passwordTextField.text {
+            makeLoginRequest(id: id, password: password)
         }
     
     }

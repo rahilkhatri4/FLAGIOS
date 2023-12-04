@@ -50,7 +50,7 @@
                                 <rect key="frame" x="140" y="266" width="150" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBk-WB-BG7" userLabel="EmailTextField" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Student ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBk-WB-BG7" userLabel="EmailTextField" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
                                 <rect key="frame" x="39" y="399" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -61,7 +61,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.36078432199999999" green="0.70822704079999999" blue="0.75026573129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gms-X5-WDG" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gms-X5-WDG" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
                                 <rect key="frame" x="39" y="471" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -111,9 +111,9 @@
                     </view>
                     <connections>
                         <outlet property="createaccountLabel" destination="xFF-j1-QbI" id="AA8-Iy-RRv"/>
+                        <outlet property="idTextField" destination="bBk-WB-BG7" id="808-Sh-IyJ"/>
                         <outlet property="loginButton" destination="oUr-U6-klD" id="1U7-4A-QFu"/>
                         <outlet property="passwordTextField" destination="Gms-X5-WDG" id="UDt-m2-Tsa"/>
-                        <outlet property="usernameTextField" destination="bBk-WB-BG7" id="CvB-zl-rke"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rei-nD-www" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,7 +132,7 @@
                                 <rect key="frame" x="140" y="211" width="150" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ik2-bA-K5A" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ik2-bA-K5A" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
                                 <rect key="frame" x="39" y="345" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
@@ -144,7 +144,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.36078432199999999" green="0.70822704079999999" blue="0.75026573129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lastname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0lG-9o-W84" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0lG-9o-W84" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
                                 <rect key="frame" x="39" y="410" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -155,7 +155,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.36078432199999999" green="0.70822704079999999" blue="0.75026573129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mailID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kzm-g6-wp5" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Student Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kzm-g6-wp5" userLabel="ID Text Field" customClass="GradientTextField" customModule="FLAG" customModuleProvider="target">
                                 <rect key="frame" x="39" y="479" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -204,8 +204,8 @@
                     </view>
                     <connections>
                         <outlet property="confirmpasswordTextField" destination="hoe-FA-oZB" id="CV8-A2-92R"/>
-                        <outlet property="emailidTextField" destination="kzm-g6-wp5" id="Y57-wR-75V"/>
                         <outlet property="firstnameTextField" destination="ik2-bA-K5A" id="yAx-fA-lJP"/>
+                        <outlet property="idTextField" destination="kzm-g6-wp5" id="OGb-2X-Zbo"/>
                         <outlet property="lastnameTextField" destination="0lG-9o-W84" id="tOB-bO-Lfi"/>
                         <outlet property="passwordTextField" destination="kHy-cM-qgk" id="icE-q9-jV4"/>
                         <outlet property="signupButton" destination="9CB-bv-ALT" id="2TF-O1-o6O"/>

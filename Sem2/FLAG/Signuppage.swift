@@ -14,7 +14,7 @@ class SignuppageController: UIViewController {
     
     @IBOutlet weak var firstnameTextField: GradientTextField!
     
-    @IBOutlet weak var emailidTextField: GradientTextField!
+    @IBOutlet weak var idTextField: GradientTextField!
     
     @IBOutlet weak var passwordTextField: GradientTextField!
     
@@ -40,7 +40,7 @@ class SignuppageController: UIViewController {
                 let textFields: [GradientTextField] = [
                     lastnameTextField,
                     firstnameTextField,
-                    emailidTextField,
+                    idTextField,
                     passwordTextField,
                     confirmpasswordTextField
                 ]
@@ -59,7 +59,7 @@ class SignuppageController: UIViewController {
             }
 
     
-    func makeSignupRequest(firstName: String, lastName: String, email: String, password: String, confirmPassword: String) {
+    func makeSignupRequest(firstName: String, lastName: String, id: String, password: String, confirmPassword: String) {
         
         
         let name = firstName + " " + lastName;
@@ -74,7 +74,7 @@ class SignuppageController: UIViewController {
             // Set the content type header for form data
             request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             
-            let postString = "register=register&name=\(name)&email=\(email)&password=\(password)&confirmpassword=\(confirmPassword)"
+            let postString = "register=register&name=\(name)&id=\(id)&password=\(password)&confirmpassword=\(confirmPassword)"
             request.httpBody = postString.data(using: .utf8)
             
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -116,10 +116,10 @@ class SignuppageController: UIViewController {
     @IBAction func signupButtonTapped(_ sender: UIButton) {
             if let firstName = firstnameTextField.text,
                let lastName = lastnameTextField.text,
-               let email = emailidTextField.text,
+               let id = idTextField.text,
                let confirmPassword = confirmpasswordTextField.text,
                let password = passwordTextField.text {
-                makeSignupRequest(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword)
+                makeSignupRequest(firstName: firstName, lastName: lastName, id: id, password: password, confirmPassword: confirmPassword)
             }
         }
     
