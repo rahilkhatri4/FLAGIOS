@@ -651,6 +651,7 @@
                     <connections>
                         <outlet property="GobackButton" destination="Ceb-FC-n0I" id="5aA-X7-emX"/>
                         <outlet property="notificationButton" destination="Ceb-FC-n0I" id="Sqa-Ra-clZ"/>
+                        <outlet property="tableView" destination="UgD-6I-QAM" id="dZm-Zk-9yP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oD0-dE-Oh8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
