@@ -50,6 +50,10 @@ class LoginpageController: UIViewController {
             return
         }
         
+        func saveUserID(_ ID: String) {
+            UserDefaults.standard.set(ID, forKey: "ID")
+        }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
@@ -74,8 +78,12 @@ class LoginpageController: UIViewController {
                         // Check if 'success' key exists in the response
                         if let success = jsonResponse["success"] as? Bool {
                             if success {
-                                print("Login Successful")
-                                self.navigateToHomepage()
+                                if let userID = jsonResponse["id"] as? String {
+                                        print("Login Successful")
+                                        // Save user ID when login is successful
+                                        saveUserID(userID)
+                                        self.navigateToHomepage()
+                                    }
                             } else {
                                 if let error = jsonResponse["error"] as? String {
                                     print("Login Failed: \(error)")

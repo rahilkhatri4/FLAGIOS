@@ -94,7 +94,7 @@ class SignuppageController: UIViewController {
                                 if success {
                                     print("Signup Successful")
                                     // Perform actions for successful signup
-                                    self.navigateToEmailVerificationPage()
+                                    self.navigateBack()
                                    
                                 } else {
                                     if let error = jsonResponse["error"] as? String {
@@ -123,12 +123,10 @@ class SignuppageController: UIViewController {
             }
         }
     
-    func navigateToEmailVerificationPage() {
+    func navigateBack() {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let emailVerificationPage = storyboard.instantiateViewController(withIdentifier: "Emailverificationpage") as! Emailverificationpage
-            self.present(emailVerificationPage, animated: true, completion: nil)
-        }
+                self.dismiss(animated: true, completion: nil)
+            }
     }
     
 }

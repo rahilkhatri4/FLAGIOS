@@ -3,4 +3,114 @@
    uuid = "EDB98546-D406-47C2-BB20-2D38E80BC077"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "894F8F5A-C51F-4E0E-89D6-9E7839EB7970"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FLAG/Accountpage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "AccountpageController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "894F8F5A-C51F-4E0E-89D6-9E7839EB7970 - ad3fe567ae60b351"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FLAG.AccountpageController.aboutTextField.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "FLAG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rahilkhatri/Desktop/FLAGIOSPROJ/Sem2/FLAG/Accountpage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "894F8F5A-C51F-4E0E-89D6-9E7839EB7970 - 642ee1238172dfa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FLAG.AccountpageController.aboutTextField.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "FLAG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rahilkhatri/Desktop/FLAGIOSPROJ/Sem2/FLAG/Accountpage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "894F8F5A-C51F-4E0E-89D6-9E7839EB7970 - 6130550792a11854"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FLAG.AccountpageController.aboutTextField.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "FLAG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rahilkhatri/Desktop/FLAGIOSPROJ/Sem2/FLAG/Accountpage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "894F8F5A-C51F-4E0E-89D6-9E7839EB7970 - f926cc37b5e5b701"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FLAG.AccountpageController.aboutTextField.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "FLAG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rahilkhatri/Desktop/FLAGIOSPROJ/Sem2/FLAG/Accountpage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "894F8F5A-C51F-4E0E-89D6-9E7839EB7970 - b3c67630c2bf0389"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FLAG.AccountpageController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FLAG.AccountpageController"
+                  moduleName = "FLAG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rahilkhatri/Desktop/FLAGIOSPROJ/Sem2/FLAG/Accountpage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "894F8F5A-C51F-4E0E-89D6-9E7839EB7970 - 1098a1a3b5fb5ecc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FLAG.AccountpageController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FLAG.AccountpageController&gt;"
+                  moduleName = "FLAG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rahilkhatri/Desktop/FLAGIOSPROJ/Sem2/FLAG/Accountpage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

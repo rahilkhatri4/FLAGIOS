@@ -17,11 +17,11 @@ class HomepageController: UIViewController {
     
     @IBOutlet weak var campusLabel: UILabel!
     
-    @IBOutlet weak var SendInterest: UIButton!
-    
-    @IBOutlet weak var NextProfile: UIButton!
-    
     @IBOutlet weak var LogoutButton: UIButton!
+    
+    @IBOutlet weak var dislikeButton: UIButton!
+    
+    @IBOutlet weak var likeButton: UIButton!
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
         // Add any additional logout logic you may need (e.g., clearing user data, resetting states, etc.)
@@ -32,6 +32,9 @@ class HomepageController: UIViewController {
            }
     }
     
+    var users: [[String: Any]] = []
+    var currentUserIndex: Int = 0
+    
     override func viewDidLoad() {
             super.viewDidLoad()
         
@@ -40,16 +43,19 @@ class HomepageController: UIViewController {
           
         
         fetchUsers()
+        displayCurrentUser()
     
         
         }
     
     
     func fetchUsers() {
-            guard let url = URL(string: "https://e-invite.site/getUsers.php") else {
-                print("Invalid URL")
-                return
-            }
+                if let ID = getUserID() {
+                    // Construct the URL with the user ID
+                    guard let url = URL(string: "https://e-invite.site/getUsers.php?id=\(ID)") else {
+                        print("Invalid URL")
+                        return
+                    }
             
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error = error {
@@ -67,22 +73,55 @@ class HomepageController: UIViewController {
                            let jsonDictionary = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any],
                            let success = jsonDictionary["success"] as? Bool, success,
                            let usersArray = jsonDictionary["users"] as? [[String: Any]] {
-                            
-                            // Update the UI on the main thread
-//                            DispatchQueue.main.async {
-//                                self.displayUsers(usersArray)
-//                            }
+                            self.users = usersArray
+
+                            DispatchQueue.main.async {
+                                self.displayCurrentUser()
+                            }
                         }
                     }
                 }
                 
             }.resume()
-        
+        } else {
+            print("User ID not found")
+        }
         
         }
     
+    func displayCurrentUser() {
+            guard currentUserIndex < users.count else {
+                print("No more users to display")
+                return
+            }
+
+            let currentUser = users[currentUserIndex]
+            // Update your UI with details from the currentUser dictionary
+            usernameLabel.text = currentUser["name"] as? String
+            aboutLabel.text = currentUser["bio"] as? String
+            campusLabel.text = currentUser["campus"] as? String
+        
+            currentUserIndex += 1
+        }
     
+    @IBAction func dislikeButtonTapped(_ sender: UIButton) {
+            // Perform actions on dislike (e.g., send feedback, log action, etc.)
+            print("User Disliked")
+            
+            // Move on to the next user
+            displayCurrentUser()
+        }
+
+        @IBAction func likeButtonTapped(_ sender: UIButton) {
+            // Perform actions on like (e.g., send feedback, log action, etc.)
+            print("User Liked")
+
+            // Move on to the next user
+            displayCurrentUser()
+        }
     
-    
+        func getUserID() -> Int? {
+            return UserDefaults.standard.integer(forKey: "ID")
+        }
     }
 
