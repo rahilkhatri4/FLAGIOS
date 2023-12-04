@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 class HomepageController: UIViewController {
-
+    
+    var currentID: String = ""
+    
+    var lastUserLiked: Bool = false
+    
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var aboutLabel: UILabel!
@@ -43,7 +47,6 @@ class HomepageController: UIViewController {
           
         
         fetchUsers()
-        displayCurrentUser()
     
         
         }
@@ -89,20 +92,45 @@ class HomepageController: UIViewController {
         
         }
     
+    
     func displayCurrentUser() {
-            guard currentUserIndex < users.count else {
-                print("No more users to display")
-                return
-            }
-
+        if currentUserIndex < users.count {
             let currentUser = users[currentUserIndex]
+            print(currentUser["id"]!)
+
+            if let userID = currentUser["id"] as? String {
+                currentID = userID
+            }
             // Update your UI with details from the currentUser dictionary
             usernameLabel.text = currentUser["name"] as? String
             aboutLabel.text = currentUser["bio"] as? String
             campusLabel.text = currentUser["campus"] as? String
-        
-            currentUserIndex += 1
+
+            // Show UI elements
+            usernameLabel.isHidden = false
+            aboutLabel.isHidden = false
+            campusLabel.isHidden = false
+        } else {
+            // Display an alert if there are no more users
+            let alertController = UIAlertController(title: "No More Users", message: "There are no more users to display.", preferredStyle: .alert)
+
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                // Perform any additional actions if needed
+            }
+
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+            
+            // No more users, hide UI elements
+            usernameLabel.isHidden = true
+            aboutLabel.isHidden = true
+            campusLabel.isHidden = true
+            
+            return
         }
+        
+        currentUserIndex += 1
+    }
     
     @IBAction func dislikeButtonTapped(_ sender: UIButton) {
             // Perform actions on dislike (e.g., send feedback, log action, etc.)
@@ -116,6 +144,63 @@ class HomepageController: UIViewController {
             // Perform actions on like (e.g., send feedback, log action, etc.)
             print("User Liked")
 
+            // Check if there are more users
+                if currentUserIndex < users.count
+                {
+                    
+                } else {
+                    if currentUserIndex == users.count && lastUserLiked == false {
+                      lastUserLiked = true
+                    } else {
+                        // Display an alert if there are no more users
+                        let alertController = UIAlertController(title: "No More Users", message: "There are no more users to like.", preferredStyle: .alert)
+
+                        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                            // Perform any additional actions if needed
+                        }
+
+                        alertController.addAction(okAction)
+                        present(alertController, animated: true, completion: nil)
+                        return
+                    }
+                }
+            
+            guard let currentUserID = getUserID() else {
+                    print("Current user ID not found")
+                    return
+                }
+            
+            // Construct the URL for the like action
+                let likeUrlString = "https://e-invite.site/likeuser.php"
+                guard let likeUrl = URL(string: likeUrlString) else {
+                    print("Invalid like URL")
+                    return
+                }
+
+                var request = URLRequest(url: likeUrl)
+                request.httpMethod = "POST"
+                request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+                // Create the POST string with the liked user's and current user's IDs
+                let postString = "likeid=\(currentID)&likedbyid=\(currentUserID)"
+                request.httpBody = postString.data(using: .utf8)
+
+                URLSession.shared.dataTask(with: request) { data, response, error in
+                    if let error = error {
+                        print("Error liking user: \(error.localizedDescription)")
+                        return
+                    }
+
+                    if let data = data {
+                        if let dataString = String(data: data, encoding: .utf8) {
+                            print("Like response:\n\(dataString)")
+
+                            // Handle the like response as needed
+                            // You might want to check for success or show an alert to the user
+                        }
+                    }
+                }.resume()
+            
             // Move on to the next user
             displayCurrentUser()
         }
