@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D52B7382B1E2F7B00C94089 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B7372B1E2F7B00C94089 /* UserTableViewCell.swift */; };
 		D2761A282A6ACE1D00D0B7B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2761A272A6ACE1D00D0B7B8 /* AppDelegate.swift */; };
 		D2761A2A2A6ACE1D00D0B7B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2761A292A6ACE1D00D0B7B8 /* SceneDelegate.swift */; };
 		D2761A2F2A6ACE1D00D0B7B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2761A2D2A6ACE1D00D0B7B8 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D52B7372B1E2F7B00C94089 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D2761A242A6ACE1D00D0B7B8 /* FLAG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLAG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2761A272A6ACE1D00D0B7B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2761A292A6ACE1D00D0B7B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				D2D43C332A72A6C0001F986D /* Emailverificationpage.swift */,
 				D2D43C352A72A6E3001F986D /* OTPverificationpage.swift */,
 				D27C8E7A2B184CF800CA2A04 /* NotificationPage.swift */,
+				7D52B7372B1E2F7B00C94089 /* UserTableViewCell.swift */,
 			);
 			path = FLAG;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				D2761A282A6ACE1D00D0B7B8 /* AppDelegate.swift in Sources */,
 				D27C8E7B2B184CF800CA2A04 /* NotificationPage.swift in Sources */,
+				7D52B7382B1E2F7B00C94089 /* UserTableViewCell.swift in Sources */,
 				D2D43C342A72A6C0001F986D /* Emailverificationpage.swift in Sources */,
 				D27F91612A702B8C004725EC /* Accountpage.swift in Sources */,
 				D27F915D2A702B02004725EC /* Homepage.swift in Sources */,
