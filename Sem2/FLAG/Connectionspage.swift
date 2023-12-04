@@ -45,6 +45,8 @@ class ConnectionspageController: UIViewController, UITableViewDataSource, UITabl
 
         
         fetchUsers()
+        
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

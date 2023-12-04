@@ -552,8 +552,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ue-nQ-0rN">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GP7-s9-rUg">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GP7-s9-rUg">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="student ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Plw-vB-yw1">
                                                         <rect key="frame" x="8" y="47" width="377" height="34"/>
@@ -561,14 +561,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-s7-x4e">
-                                                <rect key="frame" x="0.0" y="128" width="393" height="872"/>
-                                                <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UgD-6I-QAM">
-                                                        <rect key="frame" x="8" y="8" width="377" height="992"/>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UgD-6I-QAM">
+                                                        <rect key="frame" x="8" y="-432" width="377" height="992"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="matches" rowHeight="150" id="XHW-WQ-XEF" customClass="UserTableViewCell" customModule="FLAG" customModuleProvider="target">
@@ -611,12 +606,6 @@
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="UgD-6I-QAM" secondAttribute="trailing" constant="8" id="9KM-c3-hsn"/>
-                                                    <constraint firstAttribute="bottom" secondItem="UgD-6I-QAM" secondAttribute="bottom" id="Lsv-pS-hSn"/>
-                                                    <constraint firstItem="UgD-6I-QAM" firstAttribute="top" secondItem="hwg-s7-x4e" secondAttribute="top" constant="8" id="ao8-M9-STx"/>
-                                                    <constraint firstItem="UgD-6I-QAM" firstAttribute="leading" secondItem="hwg-s7-x4e" secondAttribute="leading" constant="8" id="dka-Cy-2Mq"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
