@@ -114,15 +114,33 @@ class LoginpageController: UIViewController {
     
     }
     
+   // for ios version <=14
+    
+//    func navigateToHomepage() {
+//        DispatchQueue.main.async {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let tabBarController = storyboard.instantiateViewController(withIdentifier: "MaintabViewController") as! UITabBarController
+//            UIApplication.shared.windows.first?.rootViewController = tabBarController
+//            UIApplication.shared.windows.first?.makeKeyAndVisible()
+//        }
+//    }
+    
+    // for ios version >=14
+    
     func navigateToHomepage() {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let tabBarController = storyboard.instantiateViewController(withIdentifier: "MaintabViewController") as! UITabBarController
-            UIApplication.shared.windows.first?.rootViewController = tabBarController
-            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                // Use UIWindowScene.windows on a relevant window scene
+                if let delegate = windowScene.delegate as? SceneDelegate {
+                    delegate.window?.rootViewController = tabBarController
+                    delegate.window?.makeKeyAndVisible()
+                }
+            }
         }
     }
-    
        
     @IBAction func createAccountLabelTapped(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
