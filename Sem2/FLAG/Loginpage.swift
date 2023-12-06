@@ -23,6 +23,9 @@ class LoginpageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        passwordTextField.isSecureTextEntry = true
+
 
                 let gradientObject = GradientObject(colors: [
                     UIColor(red: 32/255.0, green: 143/255.0, blue: 159/255.0, alpha: 1),

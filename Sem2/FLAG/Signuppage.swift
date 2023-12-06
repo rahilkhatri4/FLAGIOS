@@ -27,6 +27,8 @@ class SignuppageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFields()
+        passwordTextField.isSecureTextEntry = true
+        confirmpasswordTextField.isSecureTextEntry = true
         signupButton.applyGradient()
             }
 

@@ -33,7 +33,9 @@ class AccountpageController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @IBOutlet weak var GobackButton: UIButton!
     
-//    @IBAction func previousButtonTapped(_ sender: UIButton) {
+    @IBOutlet weak var BoostProfile: UIButton!
+    
+    //    @IBAction func previousButtonTapped(_ sender: UIButton) {
 //           // Navigate to the "Homepage" view controller
 //           if let ConnectionspageViewController = UIStoryboard(name: "Main", bundle: nil)
 //               .instantiateViewController(withIdentifier: "ConnectionspageController") as? ConnectionspageController {
@@ -41,6 +43,36 @@ class AccountpageController: UIViewController, UIPickerViewDelegate, UIPickerVie
 //           }
 //       }
     
+    
+    @IBAction func boostProfileButtonTapped(_ sender: UIButton) {
+        guard let ID = getUserID() else {
+            print("User ID not found")
+            return
+        }
+
+        let boostURLString = "https://e-invite.site/boostuser.php?id=\(ID)"
+        guard let boostURL = URL(string: boostURLString) else {
+            print("Invalid boost URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: boostURL) { data, response, error in
+            if let error = error {
+                print("Error boosting profile: \(error.localizedDescription)")
+                return
+            }
+
+            if let data = data {
+                if let dataString = String(data: data, encoding: .utf8) {
+                    print("Boost Profile response:\n\(dataString)")
+
+                    // Handle the response as needed
+                    // You might want to check for success or show an alert to the user
+                }
+            }
+        }.resume()
+    }
+
     
     @IBAction func updateButtonClicked(_ sender: UIButton) {
         guard let ID = getUserID() else {
@@ -108,7 +140,7 @@ class AccountpageController: UIViewController, UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
             super.viewDidLoad()
             updateButton.applyGradient()
-              
+        BoostProfile.applyGradient()
         // Apply the corner radius
                 userTextField.layer.cornerRadius = 25
         
